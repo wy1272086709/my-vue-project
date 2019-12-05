@@ -12,6 +12,8 @@
 	            <Button style="margin-left: 8px">Cancel</Button>
 	        </FormItem>
 		</Form>
+		<!-- 可以用于不同路由之间的跳转,除了to属性,还有name属性等等. -->
+		<router-link :to="{path:'/hello-world'}">hello world!</router-link>
 	</div>
 </template>
 <script>

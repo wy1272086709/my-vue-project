@@ -8,10 +8,27 @@ const routers = [
     },
     {
         path: '/login',
+        name: 'login',
+        meta: {
+            title: '',
+        },
+        component: (resolve) => require(['./views/login.vue'], resolve)
+    },
+    {
+        path: '/student-view',
         meta: {
             title: ''
         },
-        component: (resolve) => require(['./views/login.vue'], resolve)
+        component: (resolve) => require(['./views/student-list.vue'], resolve)
+    },
+    {
+        path: '/hello-world',
+        name: 'helloword',
+        meta: {
+            title: '',
+            name: 'hello-world'
+        },
+        component: (resolve) => require(['./views/HelloWorld.vue'], resolve)
     }
 ];
 export default routers;
