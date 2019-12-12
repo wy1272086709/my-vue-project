@@ -1,10 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
     entry: {
-        main: './src/main',
+        main: ["babel-polyfill", './src/main'],
         vendors: './src/vendors'
     },
     output: {
@@ -64,10 +63,6 @@ module.exports = {
             {
                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
                 loader: 'url-loader?limit=1024'
-            },
-            {
-                test: /\.(html|tpl)$/,
-                loader: 'html-loader'
             }
         ]
     },

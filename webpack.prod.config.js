@@ -7,14 +7,15 @@ const fs = require('fs');
 
 fs.open('./src/config/env.js', 'w', function (err, fd) {
     const buf = 'export default "production";';
-    fs.write(fd, buf, 0, buf.length, 0, function (err, written, buffer){});
+    //fs.write(fd, buf, 0, buf.length, 0, function (err, written, buffer){});
+    fs.write(fd, buf, 0, 'utf-8', function (err, written, buffer){});
 });
 
 module.exports = merge(webpackBaseConfig, {
     output: {
-        publicPath: '/dist/',
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[hash].chunk.js'
+        publicPath: './dist/',
+        filename: 'static/js/[name].[hash].js',
+        chunkFilename: 'static/js/[name].[hash].chunk.js'
     },
     plugins: [
         new ExtractTextPlugin({
@@ -36,7 +37,7 @@ module.exports = merge(webpackBaseConfig, {
             }
         }),
         new HtmlWebpackPlugin({
-            filename: '../index_prod.html',
+            filename: '../index-prod2.html',
             template: './src/template/index.ejs',
             inject: false
         })

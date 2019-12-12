@@ -20,15 +20,6 @@ const routers = [
             title: ''
         },
         component: (resolve) => require(['./views/student-list.vue'], resolve)
-    },
-    {
-        path: '/hello-world',
-        name: 'helloword',
-        meta: {
-            title: '',
-            name: 'hello-world'
-        },
-        component: (resolve) => require(['./views/HelloWorld.vue'], resolve)
     }
 ];
 export default routers;
